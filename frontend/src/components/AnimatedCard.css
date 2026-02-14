@@ -1,0 +1,214 @@
+.animated-card {
+  position: relative;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.animated-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem;
+  background: inherit;
+}
+
+.card-marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(101%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-inner {
+  display: flex;
+  width: fit-content;
+  height: 100%;
+  align-items: center;
+}
+
+.marquee-content {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.marquee-text {
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 0 2rem;
+  letter-spacing: 2px;
+}
+
+.marquee-image {
+  width: 120px;
+  height: 60px;
+  margin: 0 2rem;
+  border-radius: 50px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+/* Patient Card Specific Styles */
+.patient-card-animated .patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.patient-card-animated .patient-name {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.patient-card-animated .patient-id {
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.patient-card-animated .patient-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.patient-card-animated .detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.patient-card-animated .detail-label {
+  color: #6c757d;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.patient-card-animated .detail-value {
+  color: #2c3e50;
+  font-weight: 400;
+}
+
+.patient-card-animated .no-staff {
+  color: #dc3545;
+  font-style: italic;
+}
+
+.patient-card-animated .assigned-staff {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.patient-card-animated .staff-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.patient-card-animated .staff-badge {
+  background: #d4edda;
+  color: #155724;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Staff Card Specific Styles */
+.staff-card-animated .staff-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.staff-card-animated .staff-name {
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.staff-card-animated .availability-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.staff-card-animated .availability-dot.available {
+  background-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+.staff-card-animated .staff-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.staff-card-animated .staff-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.staff-card-animated .staff-detail-item .detail-label {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.staff-card-animated .staff-detail-item span:not(.detail-label) {
+  color: #2c3e50;
+}
+
+.staff-card-animated .emergency-badge {
+  display: inline-block;
+  background: #fff3cd;
+  color: #856404;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .marquee-text {
+    font-size: 1rem;
+  }
+
+  .marquee-image {
+    width: 100px;
+    height: 50px;
+    margin: 0 1rem;
+  }
+}
+

@@ -1,3 +1,4 @@
+import AnimatedStaffCard from './AnimatedStaffCard'
 import './AvailableStaff.css'
 
 const AvailableStaff = ({ staff }) => {
@@ -13,27 +14,7 @@ const AvailableStaff = ({ staff }) => {
         {doctors.length > 0 ? (
           <div className="staff-list">
             {doctors.map((doctor) => (
-              <div key={doctor._id} className="staff-card">
-                <div className="staff-header">
-                  <span className="staff-name">{doctor.name}</span>
-                  <span className="availability-dot available"></span>
-                </div>
-                <div className="staff-details">
-                  <div className="staff-detail-item">
-                    <span className="detail-label">Department:</span>
-                    <span>{doctor.department}</span>
-                  </div>
-                  {doctor.specialization && (
-                    <div className="staff-detail-item">
-                      <span className="detail-label">Specialization:</span>
-                      <span>{doctor.specialization}</span>
-                    </div>
-                  )}
-                  {doctor.isEmergencyAvailable && (
-                    <span className="emergency-badge">Emergency Available</span>
-                  )}
-                </div>
-              </div>
+              <AnimatedStaffCard key={doctor._id} staff={doctor} />
             ))}
           </div>
         ) : (
@@ -49,21 +30,7 @@ const AvailableStaff = ({ staff }) => {
         {nurses.length > 0 ? (
           <div className="staff-list">
             {nurses.map((nurse) => (
-              <div key={nurse._id} className="staff-card">
-                <div className="staff-header">
-                  <span className="staff-name">{nurse.name}</span>
-                  <span className="availability-dot available"></span>
-                </div>
-                <div className="staff-details">
-                  <div className="staff-detail-item">
-                    <span className="detail-label">Department:</span>
-                    <span>{nurse.department}</span>
-                  </div>
-                  {nurse.isEmergencyAvailable && (
-                    <span className="emergency-badge">Emergency Available</span>
-                  )}
-                </div>
-              </div>
+              <AnimatedStaffCard key={nurse._id} staff={nurse} />
             ))}
           </div>
         ) : (
@@ -75,5 +42,6 @@ const AvailableStaff = ({ staff }) => {
 }
 
 export default AvailableStaff
+
 
 
